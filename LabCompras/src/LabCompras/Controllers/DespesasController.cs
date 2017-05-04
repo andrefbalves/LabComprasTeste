@@ -28,6 +28,7 @@ namespace LabCompras.Controllers
         {
             if (ModelState.IsValid)
             {
+                Repository.AddDespesa(despesa);               
                 return View("DespesaConfirmada", despesa);
             }
             else
