@@ -4,7 +4,7 @@
     ViewData["Title"] = "Despesas";
 }
 
-<h201>@ViewData["Title"]</h201>
+<h1>@ViewData["Title"]</h1>
 
 @if (Model.Count == 0)
 {
@@ -14,13 +14,13 @@ else
 {
     @foreach (LabCompras.Models.Despesa despesa in Model)
     {
-        <div class="jumbotron">
-            <p>Nome da Despesa: @despesa.NomeDespesa </p>
-            <p>Quantidade: @despesa.Quantidade</p>
-            <p>Valor: @despesa.Valor</p>
-            <p>Categoria: @despesa.Categoria</p>
-            <p>
-                Pago?
+        <div class="jumbotron text-center">
+            <p>Nome da Despesa: @despesa.NomeDespesa 
+              Quantidade: @despesa.Quantidade
+               Valor: @despesa.Valor
+               Categoria: @despesa.Categoria
+            
+                   Pago?
 
                 @if (despesa.Pago)
                 {
@@ -34,4 +34,5 @@ else
         </div>
     }
 }
-<a asp-action="NovaDespesa" class="btn btn-primary"><span class="glyphicon glyphicon-plus"> Despesa</span></a>
+<a asp-action="NovaDespesa" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>Despesa</a>
+<a asp-action="ClearDespesa" class="btn btn-danger"><span class="glyphicon glyphicon-alert"></span>Eliminar Despesas</a>

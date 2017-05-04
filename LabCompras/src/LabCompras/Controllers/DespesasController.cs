@@ -14,7 +14,14 @@ namespace LabCompras.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            List<Despesa> despesas = Repository.Despesas;
+            return View(despesas);
+        }
+
+        public IActionResult ClearDespesa()
+        {
+            Repository.ClearDespesa();
+            return View("Index", Repository.Despesas);
         }
 
         [HttpGet]
@@ -34,6 +41,7 @@ namespace LabCompras.Controllers
             else
                 return View();
         }
+
 
     }
 

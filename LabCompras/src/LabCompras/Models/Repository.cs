@@ -21,5 +21,30 @@ namespace LabCompras.Models
         {
             despesas.Add(despesa);
         }
+
+        public static void ClearDespesa()
+        {
+            despesas.Clear();
+        }
+
+        private static List<ContaBancaria> contas = new List<ContaBancaria>();
+
+        public static List<ContaBancaria> Contas
+        {
+            get
+            {
+                return contas;
+            }
+        } 
+
+        public static void AddConta(ContaBancaria conta)
+        {
+            contas.Add(conta);
+        }
+        
+        public static void ClearConta()
+        {
+            contas.Clear();
+        }               
     }
 }

@@ -1,7 +1,36 @@
-﻿@{
+﻿@model List<LabCompras.Models.ContaBancaria>
+
+@{
     ViewData["Title"] = "Contas";
 }
 
 <h1>@ViewData["Title"]</h1>
 
+@if (Model.Count == 0)
+{
+    <p>Não existem contas criadas.</p>
+}
+else
+{
+    @foreach (LabCompras.Models.ContaBancaria contas in Model)
+    {
+        <div class="jumbotron">
+            <p>Nome do Titular: @contas.NomeTitular
+            Saldo: @contas.Saldo
+
+            Ativa?
+
+            @if (contas.Ativa)
+            {
+                @:Sim
+    }
+            else
+            {
+                @:Não
+    }
+            </p>
+        </div>
+    }
+}
 <a asp-action="NovaConta" class="btn btn-primary"><span class="glyphicon glyphicon-plus"> Conta</span></a>
+<a asp-action="ClearConta" class="btn btn-danger"> Eliminar contas</a>

@@ -14,9 +14,15 @@ namespace LabCompras.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            List<ContaBancaria> contas = Repository.Contas;        
+            return View(contas);
         }
 
+        public IActionResult ClearConta()
+        {
+            Repository.ClearConta();
+            return View("Index", Repository.Contas);
+        }
 
         [HttpGet]
         public IActionResult NovaConta()
@@ -29,6 +35,7 @@ namespace LabCompras.Controllers
         {
             if (ModelState.IsValid)
             {
+                Repository.AddConta(conta);
                 return View("ContaConfirmada", conta);
             }
             else
