@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - LabCompras</title>
+    <title> LabCompras - @ViewData["Title"]</title>
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -30,10 +30,10 @@
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">LabCompras</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                <ul class="nav navbar-nav">                   
+                    <li><a asp-area="" asp-controller="Home" asp-action="Conceito">Conceito</a></li> 
+                    <li><a asp-area="" asp-controller="Despesas" asp-action="Index">Despesa</a></li>
+                    <li><a asp-area="" asp-controller="Conta" asp-action="Index">Conta</a></li>                      
                 </ul>
             </div>
         </div>

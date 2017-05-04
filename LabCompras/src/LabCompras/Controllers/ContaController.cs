@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using LabCompras.Models;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace LabCompras.Controllers
 {
-    public class HomeController : Controller
+    public class ContaController : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()
@@ -16,9 +17,22 @@ namespace LabCompras.Controllers
             return View();
         }
 
-        public IActionResult Conceito()
+
+        [HttpGet]
+        public IActionResult NovaConta()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult NovaConta(ContaBancaria conta)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("ContaConfirmada", conta);
+            }
+            else
+                return View();
         }
     }
 }

@@ -1,0 +1,42 @@
+﻿@model LabCompras.Models.Despesa
+
+@{
+    ViewData["Title"] = "Nova Despesa";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="NomeDespesa">Nome da Despesa</label>
+        <input asp-for="NomeDespesa" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Quantidade">Quantidade</label>
+        <input asp-for="Quantidade" value="1" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Valor">Valor</label>
+        <input asp-for="Valor" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Categoria">Categoria</label>
+        <select asp-for="Categoria" class="form-control">
+            <option>Alimentar</option>
+            <option>Roupa</option>
+            <option>Transporte</option>
+            <option>Casa</option>
+            <option>Pessoal</option>
+        </select>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Pago">Pago</label>
+        <select asp-for="Pago" class="form-control">
+            <option value="true">Sim</option>
+            <option value="false" selected="selected">Não</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success">Adicionar Despesa</button>
+</form>

@@ -1,0 +1,27 @@
+﻿@model LabCompras.Models.ContaBancaria
+
+@{
+    ViewData["Title"] = "Nova Conta";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="NomeTitular">Nome do Titular</label>
+        <input asp-for="NomeTitular" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Saldo">Saldo</label>
+        <input asp-for="Saldo" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Ativa">Valor</label>
+        <select asp-for="Ativa" class="form-control">
+            <option value="true">Sim</option>
+            <option value="false" selected="selected">Não</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success">Adicionar Conta</button>
+</form>

@@ -1,0 +1,23 @@
+﻿@model LabCompras.Models.ContaBancaria
+
+@{
+    ViewData["Title"] = "Conta Confirmada";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Nome do Titular: @Model.NomeTitular </p>
+<p>Saldo: @Model.Saldo</p>
+<p>
+    Ativa?
+
+    @if (Model.Ativa)
+    {
+        @:Sim
+    }
+    else
+    {
+        @:Não
+    }
+</p>
+<p><a asp-controller="Conta" asp-action="Index">Voltar a Contas</a></p>
